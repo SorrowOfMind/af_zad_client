@@ -1,5 +1,6 @@
 @import './utils/reset.css';
 @import './components/topbar.css';
+@import './components//form.css';
 
 .App {
     background-color: #eefbff;

@@ -1,0 +1,17 @@
+.form__wrapper {
+    padding: 4rem 0;
+}
+
+.form__inner-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.form__input-wrapper {
+    position: relative;
+}
+
+.form__error {
+    position: absolute;
+    font-size: 12px;
+}
