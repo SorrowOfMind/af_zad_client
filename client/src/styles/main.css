@@ -1,3 +1,8 @@
 @import './utils/reset.css';
 @import './components/topbar.css';
 
+.App {
+    background-color: #eefbff;
+    width: 100vw;
+    height: 100vh;
+}
