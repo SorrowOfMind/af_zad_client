@@ -2,6 +2,7 @@
 @import './components/topbar.css';
 @import './components/form.css';
 @import './components/list.css';
+@import './components/modal.css';
 
 .App {
     background-color: #eefbff;
