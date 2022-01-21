@@ -1,7 +1,17 @@
-import { ADD_CHANNEL } from "./types";
+import { ADD_CHANNEL, LOAD_CHANNELS } from "./types";
 import axios from 'axios';
 
 const baseUrl = "http://localhost:80/adsfox_zadanie/app/";
+
+export const loadChannels = () => {
+    const url = `${baseUrl}get.php/`;
+  
+    return async dispatch => {
+        const res = await axios.get(url);
+        const data = await res.data;
+        dispatch({type: LOAD_CHANNELS, payload: data});
+    }
+}
 
 export const addChannel = (channelData) => {
     const url = `${baseUrl}create.php/`;
@@ -16,3 +26,5 @@ export const addChannel = (channelData) => {
         }
     }
 }
+
+

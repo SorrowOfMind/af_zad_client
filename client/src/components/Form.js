@@ -1,6 +1,6 @@
 import React, {useRef, useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
-import { addChannel } from '../actions/crudActions';
+import {addChannel} from '../actions/crudActions';
 import useInput from '../hooks/useInput';
 
 const Form = () => {
