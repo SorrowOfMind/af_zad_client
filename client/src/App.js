@@ -1,13 +1,17 @@
 import TopBar from './components/TopBar';
 import Form from './components/Form';
 import List from './components/List';
+import Chart from './components/Chart';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <TopBar/>
       <Form />
-      <List />
+      <div className="app__content-wrapper container">
+        <List />
+        <Chart />
+      </div>
     </div>
   );
 }

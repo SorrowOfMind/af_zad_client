@@ -19,7 +19,6 @@ const List = () => {
   }
 
   const openModal = id => {
-    console.log(id);
     setEditId(id);
     setEditModal(true);
   }

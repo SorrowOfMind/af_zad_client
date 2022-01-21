@@ -3,9 +3,22 @@
 @import './components/form.css';
 @import './components/list.css';
 @import './components/modal.css';
+@import './components/chart.css';
 
-.App {
+.app {
     background-color: #eefbff;
     width: 100vw;
     height: 100vh;
+}
+
+.app__content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    .app__content-wrapper.container {
+        flex-direction: column;
+    }
 }

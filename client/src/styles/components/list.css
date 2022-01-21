@@ -1,8 +1,15 @@
 .section__list-channels {
     width: 50%;
+    margin: 0;
 }
 
 .list__listrow-actions {
     display: flex;
     justify-content: space-around;
+}
+
+@media only screen and (max-width: 1000px) {
+    .section__list-channels {
+        width: 100%;
+    }
 }
