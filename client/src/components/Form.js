@@ -44,13 +44,13 @@ const Form = () => {
     const handleSubmit = e => {
         e.preventDefault();
         if (validateForm()){
-            let data = {name: channel, number: nClients};
+            let data = {name: channel, num_clients: nClients};
             dispatch(addChannel(data));
         }
     }
 
     return (
-        <div className="form__wrapper text-center">
+        <section className="form__wrapper text-center container">
             <h2 className="mb-4">Dodaj nowy kanał:</h2>
             <form className='form container p-0' onSubmit={handleSubmit}>
                 <div className="row row-cols-lg-auto g-3 align-items-end form__inner-wrapper">
@@ -82,7 +82,7 @@ const Form = () => {
                     </div>
                 </div>
             </form>
-        </div>
+        </section>
     );
   
 }

@@ -1,4 +1,4 @@
-import { ADD_CHANNEL, LOAD_CHANNELS } from "./types";
+import { ADD_CHANNEL, DELETE_CHANNEL, LOAD_CHANNELS } from "./types";
 import axios from 'axios';
 
 const baseUrl = "http://localhost:80/adsfox_zadanie/app/";
@@ -13,7 +13,7 @@ export const loadChannels = () => {
     }
 }
 
-export const addChannel = (channelData) => {
+export const addChannel = channelData => {
     const url = `${baseUrl}create.php/`;
     return async dispatch => {
         try {
@@ -21,6 +21,20 @@ export const addChannel = (channelData) => {
             const data = await res.data;
             console.log(data);
             dispatch({type: ADD_CHANNEL, payload: channelData});
+        } catch {
+            throw new Error("Coś poszło nie tak. Spróbuj ponownie później");
+        }
+    }
+}
+
+export const deleteChannel = id => {
+    const url = `${baseUrl}delete.php?id=${id}`;
+    return async dispatch => {
+        try {
+            const res = await axios.delete(url);
+            const data = await res.data;
+            console.log(data);
+            dispatch({type: DELETE_CHANNEL, payload: id});
         } catch {
             throw new Error("Coś poszło nie tak. Spróbuj ponownie później");
         }
