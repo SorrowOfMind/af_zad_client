@@ -1,6 +1,6 @@
 import React, {useRef, useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
-import { addRecord } from '../actions/crudActions';
+import { addChannel } from '../actions/crudActions';
 import useInput from '../hooks/useInput';
 
 const Form = () => {
@@ -45,7 +45,7 @@ const Form = () => {
         e.preventDefault();
         if (validateForm()){
             let data = {name: channel, number: nClients};
-            dispatch(addRecord(data));
+            dispatch(addChannel(data));
         }
     }
 

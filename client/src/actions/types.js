@@ -1,1 +1,1 @@
-export const ADD_RECORD = 'ADD_RECORD';
+export const ADD_CHANNEL = 'ADD_RECORD';
