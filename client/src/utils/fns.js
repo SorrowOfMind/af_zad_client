@@ -1,4 +1,5 @@
 export function randomRGBGenerator(length){
+    if (isNaN(length)) return false;
     let colors = [];
 
     for (let i = 0; i < length; i++){
@@ -7,7 +8,6 @@ export function randomRGBGenerator(length){
         let b = getRGB();
 
         let rgb = `rgb(${r}, ${g}, ${b})`;
-
         colors.push(rgb);
     }
 
@@ -19,5 +19,6 @@ function getRGB(){
 }
 
 export function calculatePercentage(total, itemValue){
+    if(isNaN(total) || isNaN(itemValue)) return false;
     return (itemValue/total * 100).toFixed(0);
 }

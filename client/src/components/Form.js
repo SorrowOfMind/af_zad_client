@@ -44,8 +44,14 @@ const Form = () => {
     const handleSubmit = e => {
         e.preventDefault();
         if (validateForm()){
-            let data = {name: channel, num_clients: nClients};
-            dispatch(addChannel(data));
+            let data = {name: channel, num_clients: parseInt(nClients)};
+            try {
+                dispatch(addChannel(data));
+                setChannel.clearInput();
+                setNClients.clearInput();
+            } catch (err){
+                console.log(err.message);
+            }
         }
     }
 
@@ -53,7 +59,7 @@ const Form = () => {
         <section className="form__wrapper text-center container">
             <h2 className="mb-4">Dodaj nowy kanał:</h2>
             <form className='form container p-0' onSubmit={handleSubmit}>
-                <div className="row row-cols-lg-auto g-3 align-items-end form__inner-wrapper">
+                <div className="row container g-3 form__inner-wrapper">
                     <div className="form__input-wrapper col-auto">
                         <label htmlFor="input-channel" className="form-label">Kanał: </label>
                         <input 
@@ -62,7 +68,7 @@ const Form = () => {
                             id="input-channel"
                             name="channel" 
                             ref={channelInput}
-                            {...setChannel}
+                            {...setChannel.setInput}
                         />
                         {formErrors.channel ? <p className="form__error text-danger">{formErrors.channel}</p> : null}
                     </div>
@@ -73,7 +79,7 @@ const Form = () => {
                             className="form-control" 
                             id="input-channel"
                             name="nclients"
-                            {...setNClients}
+                            {...setNClients.setInput}
                         />
                         {formErrors.nClients ? <p className="form__error text-danger">{formErrors.nClients}</p> : null}
                     </div>

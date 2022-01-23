@@ -42,8 +42,10 @@ const EditModal = ({id, closeModal, handleUpdate}) => {
         e.preventDefault();
         if (!numInput || !/[0-9]+/.test(numInput))
             setFormErrors("Proszę podać liczbę klientów")
-        else
+        else {
+            setNumInput.clearInput();
             handleUpdate(numInput);
+        }
     }
 
     return (
@@ -71,7 +73,7 @@ const EditModal = ({id, closeModal, handleUpdate}) => {
                                     type="number" 
                                     className="form-control" 
                                     name="nclients"
-                                    {...setNumInput}
+                                    {...setNumInput.setInput}
                                 />
                                 {formErrors ? <p className="form__error text-danger">{formErrors}</p> : null}
                             </div>

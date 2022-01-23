@@ -31,7 +31,7 @@ const List = () => {
   return (
     <>
     {(editModal && editId) && <EditModal id={editId} closeModal={setEditModal} handleUpdate={handleUpdate}/>}
-    <section className='container section__list-channels'>
+    <section className='section__list-channels'>
       <h2>Lista wszystkich kanałów:</h2>
       <table className="table table-dark table-striped table-hover">
         <thead>
